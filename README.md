@@ -1,5 +1,5 @@
-Algorithms: Design and Analysis, Part 1
-=======================================
+Algorithms: Design and Analysis (I)
+===================================
 
 This repository contains all my solutions to Coursera's [Algorithms: Design and
 Analysis Pt.1](https://www.coursera.org/course/algo) (Stanford University)
