@@ -6,10 +6,7 @@ class Digraph:
             raise ValueError("Number of Vertices must be nonnegative")
 
         self.verts = vertices
-        self.adj_list = { i : 0 for i in range(self.verts) }
-
-        for v in range(vertices):
-            self.adj_list[v] = [ ]
+        self.adj_list = { i : [ ] for i in range(self.verts) }
 
     def add_edge(self, v, w):
         if v < 0 or v >= self.verts:
