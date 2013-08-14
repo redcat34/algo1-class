@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-class WeightedDigraph:
+class WeightedGraph:
     # internal representation of the adjacency list as a dictionary whose keys
     # are vertices and values are dictionaries of (destination, cost) pairs
 
@@ -29,7 +29,9 @@ class WeightedDigraph:
         if cost < 0:
             raise ValueError("Edge costs must be nonnegative")
 
+        # undirected!
         self.adj_dict[v][w] = cost
+        self.adj_dict[w][v] = cost
 
     def vertices(self):
         return self.verts

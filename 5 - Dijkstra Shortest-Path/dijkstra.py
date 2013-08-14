@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from digraph  import WeightedDigraph
+from graph  import WeightedGraph
 from priodict import PriorityDict
  
 def dijkstra(graph, start, end):
@@ -18,17 +18,18 @@ def dijkstra(graph, start, end):
 
     return distance
 
-def read_weighted_digraph_file(path):
+def read_weighted_graph_file(path):
     lines = [ [ tuple.split(",") for tuple in line.split() ] \
               for line in open(path).readlines() ]
 
-    graph = WeightedDigraph(len(lines))
+    graph = WeightedGraph(len(lines))
     for line in lines:
         v = int(line[0][0]) - 1
         for edge in line[1:]:
             w    = int(edge[0]) - 1
             cost = int(edge[1])
             graph.add_edge(v, w, cost)
+            graph.add_edge(w, v, cost)
 
     return graph
 
@@ -41,8 +42,8 @@ if __name__ == '__main__':
     parser.add_argument("end",   help = "the destination node", type = int)
     args = parser.parse_args()
 
-    digraph   = read_weighted_digraph_file(args.file)
-    distances = dijkstra(digraph, args.start - 1, args.end - 1)
+    graph     = read_weighted_graph_file(args.file)
+    distances = dijkstra(graph, args.start - 1, args.end - 1)
 
     print("Distance from", args.start,
           "to", args.end,
