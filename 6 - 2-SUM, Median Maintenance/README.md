@@ -19,7 +19,7 @@ one-line addition to the algorithm from lecture.)
 your own hash table for it. For example, you could compare performance under
 the chaining and open addressing approaches to resolving collisions. 
 
-## Directions for Problem 2
+### Directions for Problem 2
 
 The goal of this problem is to implement the **"Median Maintenance"** algorithm
 (covered in the Week 5 lecture on heap applications). The text file contains a
