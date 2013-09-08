@@ -10,3 +10,5 @@ programming assignments.
 The course is language-agnostic and we are encouraged to use whatever language
 we want to implement the required algorithms. I will use Python for all these
 assignments.
+
+For Part 2 assignments, look at: https://github.com/agjacome/algo2-class
