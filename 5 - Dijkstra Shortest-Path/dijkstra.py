@@ -2,12 +2,12 @@
 
 from graph  import WeightedGraph
 from priodict import PriorityDict
- 
+
 def dijkstra(graph, start, end):
     heap        = PriorityDict({ v: float("inf") for v in graph })
     heap[start] = 0
     distance    = { }
-    
+
     for v in heap:
         distance[v] = heap[v]
         if v is end: return distance
@@ -29,7 +29,6 @@ def read_weighted_graph_file(path):
             w    = int(edge[0]) - 1
             cost = int(edge[1])
             graph.add_edge(v, w, cost)
-            graph.add_edge(w, v, cost)
 
     return graph
 
